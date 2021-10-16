@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "d5fc3b16-1531-47d0-8a43-1427ba3f3db7",
+		"name": "AutomobileAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All Cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/v1/automobile/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"automobile",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Car",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/v1/automobile/car/107",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"automobile",
+						"car",
+						"107"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

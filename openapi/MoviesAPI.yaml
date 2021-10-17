@@ -1,7 +1,8 @@
 openapi: 3.0.0
 info:
   title: Movies API
-  description: Sample Movies API
+  description: Sample Movies API and has facilities to read all movies as well as
+    by type
   version: 1.1.0
 servers:
 - url: https://virtserver.swaggerhub.com/TecnovosOrg/MoviesAPI/1.1.0

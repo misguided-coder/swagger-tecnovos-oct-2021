@@ -1,0 +1,74 @@
+openapi: 3.0.0
+info:
+  title: Movies API
+  description: Sample Movies API and has facilities to read all movies as well as
+    by type
+  version: 1.1.0
+servers:
+- url: https://virtserver.swaggerhub.com/TecnovosOrg/MoviesAPI/1.1.0
+  description: SwaggerHub API Auto Mocking
+- url: http://localhost:8000/api/v1
+  description: Prod Server
+tags:
+- name: Movies
+- name: Fun
+paths:
+  /movies/{type}:
+    get:
+      tags:
+      - Movies
+      summary: Read  movies by type
+      description: Read movies by types
+      operationId: fetchByType
+      parameters:
+      - name: type
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: family
+          default: family
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200'
+  /movies:
+    get:
+      tags:
+      - Movies
+      summary: Read all movies
+      description: Read all movies
+      operationId: fetchAll
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200'
+components:
+  schemas:
+    inline_response_200:
+      minItems: 2
+      required:
+      - name
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+          example: Bahubali
+          default: Bahubali
+        type:
+          type: string
+          example: epic
+          default: epic
